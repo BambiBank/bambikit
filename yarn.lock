@@ -319,6 +319,7 @@ __metadata:
     "@chromatic-com/storybook": "npm:^3.2.4"
     "@storybook/addon-essentials": "npm:^8.5.3"
     "@storybook/addon-interactions": "npm:^8.5.3"
+    "@storybook/addon-links": "npm:^8.5.3"
     "@storybook/addon-onboarding": "npm:^8.5.3"
     "@storybook/blocks": "npm:^8.5.3"
     "@storybook/react": "npm:^8.5.3"
@@ -1383,6 +1384,23 @@ __metadata:
   peerDependencies:
     storybook: ^8.5.3
   checksum: 10c0/178467fa065590a2e92d3e197e880d9c19cfc63e9e91054b0e93c2801d101e5df8444266fea39d4124f78c99690ee0fdc31bb27a59259b88cf914b78180c5066
+  languageName: node
+  linkType: hard
+
+"@storybook/addon-links@npm:^8.5.3":
+  version: 8.5.3
+  resolution: "@storybook/addon-links@npm:8.5.3"
+  dependencies:
+    "@storybook/csf": "npm:0.1.12"
+    "@storybook/global": "npm:^5.0.0"
+    ts-dedent: "npm:^2.0.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
+    storybook: ^8.5.3
+  peerDependenciesMeta:
+    react:
+      optional: true
+  checksum: 10c0/70f93d75247f9208d01866f354f03fa3c5058f70f867729b1d54c1b712f8412f9d04b6312baadfbd447bd86b02fe8c9bcd01c1f0141c679acbe90fdbc2799e37
   languageName: node
   linkType: hard
 
