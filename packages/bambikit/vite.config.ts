@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [
-    react({ include: /\.(ts|tsx)$/ }),
+    react(),
     dts({
       include: ['src'],
       outDir: 'dist',
@@ -21,17 +21,18 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true,
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: ['react', 'react-dom', 'react/jsx-runtime'],
       output: {
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
+          'react/jsx-runtime': 'jsx',
+        },
+        assetFileNames: () => {
+          return 'index.css';
         },
       },
-      input: {
-        main: resolve(__dirname, 'src/index.ts'),
-        styles: resolve(__dirname, 'src/styles/colors.css'),
-      },
     },
+    cssCodeSplit: false,
   },
 });
