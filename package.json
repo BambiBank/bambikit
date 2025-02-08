@@ -1,0 +1,40 @@
+{
+  "name": "bambikit",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "example"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "build:bambikit": "turbo run build --filter=@bambikit/bambikit...",
+    "build:example": "turbo run build --filter=example...",
+    "lint": "biome lint . && pnpm format:check && pnpm --recursive typecheck",
+    "lint:fix": "biome lint . --write && pnpm format:fix",
+    "format:check": "biome check .",
+    "format:fix": "biome format . --write",
+    "release": "turbo run release --filter=@bambikit/bambikit..."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/BambiBank/bambikit.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@changesets/cli": "^2.27.12",
+    "@types/node": "^22.13.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "esbuild": "^0.24.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "turbo": "^2.4.0",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.11",
+    "vite-plugin-dts": "^4.5.0"
+  },
+  "packageManager": "yarn@4.6.0"
+}
