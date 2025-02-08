@@ -3,13 +3,18 @@
   "version": "0.2.5",
   "description": "Connect Button for BambiKit",
   "type": "module",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
   "exports": {
-    "import": "./dist/index.es.js",
-    "require": "./dist/index.cjs.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js"
+    },
+    "./style.css": "./dist/index.css"
   },
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "style": "dist/index.css",
   "files": [
     "dist"
   ],
@@ -28,6 +33,7 @@
     "@chromatic-com/storybook": "^3.2.4",
     "@storybook/addon-essentials": "^8.5.3",
     "@storybook/addon-interactions": "^8.5.3",
+    "@storybook/addon-links": "^8.5.3",
     "@storybook/addon-onboarding": "^8.5.3",
     "@storybook/blocks": "^8.5.3",
     "@storybook/react": "^8.5.3",

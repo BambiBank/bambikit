@@ -1,11 +1,11 @@
 import { defineConfig } from 'vite';
-import { resolve } from 'path';
+import { resolve } from 'node:path';
 import dts from 'vite-plugin-dts';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [
-    react({ include: /\.(ts|tsx)$/ }),
+    react(),
     dts({
       include: ['src'],
       outDir: 'dist',
@@ -21,13 +21,18 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true,
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: ['react', 'react-dom', 'react/jsx-runtime'],
       output: {
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
+          'react/jsx-runtime': 'jsx',
+        },
+        assetFileNames: () => {
+          return 'index.css';
         },
       },
     },
+    cssCodeSplit: false,
   },
 });
