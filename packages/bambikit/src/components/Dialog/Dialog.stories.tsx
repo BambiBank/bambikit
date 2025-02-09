@@ -16,7 +16,6 @@ type Story = StoryObj<typeof Dialog>;
 
 export const Default: Story = {
   args: {
-    title: 'Dialog Title',
     children: <div>Dialog Content</div>,
   },
 };
