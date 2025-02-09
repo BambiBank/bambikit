@@ -50,5 +50,8 @@
     "type": "git",
     "url": "git+ssh://git@github.com/BambiBank/bambikit.git",
     "directory": "packages/bambikit"
+  },
+  "dependencies": {
+    "@gemwallet/api": "^3.8.0"
   }
 }
