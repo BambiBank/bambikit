@@ -4,6 +4,10 @@ import { ConnectButton } from './ConnectButton';
 const meta: Meta<typeof ConnectButton> = {
   title: 'Components/ConnectButton',
   component: ConnectButton,
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
 };
 
 export default meta;

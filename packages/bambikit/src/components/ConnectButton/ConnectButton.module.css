@@ -1,6 +1,6 @@
 .connectButton {
   margin: 0px 16px;
-  padding: 6px 16px;
+  padding: 6px 14px;
   font-size: 14px;
   font-weight: 500;
   color: white;
@@ -12,9 +12,9 @@
 }
 
 .connectButton:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
 .connectButton:active {
-  transform: scale(0.97);
+  transform: scale(0.95);
 }
