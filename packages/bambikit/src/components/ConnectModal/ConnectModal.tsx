@@ -3,15 +3,7 @@ import { useAccount } from '../../hooks/useAccount';
 import { Dialog } from '../Dialog/Dialog';
 import { DialogHeader } from '../DialogHeader/DialogHeader';
 import styles from './ConnectModal.module.css';
-import xamanIcon from '../../assets/wallets/xaman.png';
-import gemwalletIcon from '../../assets/wallets/gemwallet.png';
-import crossmarkIcon from '../../assets/wallets/crossmark.png';
-
-const WALLETS = [
-  { id: 'xaman', name: 'Xaman', icon: xamanIcon },
-  { id: 'gemwallet', name: 'GemWallet', icon: gemwalletIcon },
-  { id: 'crossmark', name: 'CROSSMARK', icon: crossmarkIcon },
-] as const;
+import { SUPPORTED_WALLETS } from '../../config/wallets';
 
 export interface ConnectModalProps {
   open: boolean;
@@ -30,7 +22,7 @@ export const ConnectModal = ({ open, onClose }: ConnectModalProps) => {
       <Dialog open={open} onClose={onClose}>
         <DialogHeader title="Connect a Wallet" onClose={onClose} />
         <div className={styles.walletList}>
-          {WALLETS.map((wallet) => (
+          {SUPPORTED_WALLETS.filter(wallet => wallet.isAvailable).map((wallet) => (
             <div
               key={wallet.id}
               className={styles.walletItem}
